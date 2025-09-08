@@ -1,0 +1,47 @@
+/* 1) 전역 변수 */
+:root {
+  --font-family: 'Pretendard', system-ui, sans-serif;
+  --gray-100: #ffffff;
+  --gray-200: #e5e5e5;
+  --gray-300: #a8a8a8;
+  --gray-400: #8f8f8f;
+  --gray-500: #5e5e5e;
+  --gray-600: #1a1a1a;
+
+  /* Colors 
+  --blue-main: #2d8ae7;
+  --blue-light: #eff7ff;
+  */
+}
+
+/* 2) 리셋/노멀라이즈 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 3) 전역 글꼴(초기 페인트 포함) */
+html, body { height: 100%; }
+body {
+  font-family: var(--font-family);
+  background: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* center로 바꿔도 됨 */
+  min-height: 100vh;
+}
+
+/* 4) #root 컨테이너 (모바일 고정폭 레이아웃) */
+#root {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.05);
+}
+
+/* 5) 타이포 기본값 */
+h1, h2, h3, h4, h5, h6, p { margin: 0; font-weight: normal; font-size: inherit; }
+
+/* 6) 폼 컨트롤은 확실하게 상속 */
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
