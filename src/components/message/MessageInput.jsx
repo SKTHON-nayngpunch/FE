@@ -18,10 +18,8 @@ export default function MessageInput({
       onSend(message);
       setMessage('');
       setIsExpanded(false);
-    } else {
-      // 메시지 입력창 확장
-      setIsExpanded(true);
     }
+    // 더 이상 빈 상태에서 보내기 버튼 클릭 시 input 확장하지 않음
   };
 
   const handleInputChange = (e) => {
@@ -53,10 +51,7 @@ export default function MessageInput({
             onKeyPress={(e) => e.key === 'Enter' && handleSendClick()}
           />
         ) : (
-          <div
-            className={styles.messagePlaceholder}
-            onClick={() => setIsExpanded(true)}
-          >
+          <div className={styles.messagePlaceholder}>
             <span>{placeholder}</span>
           </div>
         )}
