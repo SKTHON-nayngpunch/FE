@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SharingIngredientsCard.css';
+import pinIcon from '@assets/images/main/pin.png';
 
 export default function SharingIngredientsCard({
   registrationDate,
@@ -40,11 +41,7 @@ export default function SharingIngredientsCard({
               등록날짜: {registrationDate}
             </span>
             <div className="location">
-              <img
-                src="/src/assets/images/main/pin.png"
-                alt="위치"
-                className="location-icon"
-              />
+              <img src={pinIcon} alt="위치" className="location-icon" />
               <span className="location-text">{location}</span>
             </div>
           </div>
