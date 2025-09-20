@@ -1,31 +1,63 @@
-import React from 'react';
-import onionImage from '@images/onion.png';
-import usersIcon from '@images/users-icon.svg';
+import React, { useState } from 'react';
 import './SharingIngredientsCard.css';
 
-const SharingIngredientsCard = ({ 
-  ingredientName = "양파", 
-  freshness = "8/10", 
-  currentMembers = 3, 
-  totalMembers = 4,
-  onApply 
-}) => {
+export default function SharingIngredientsCard({
+  registrationDate,
+  title,
+  ingredientName,
+  freshness,
+  maxFreshness,
+  currentMembers,
+  totalMembers,
+  location,
+  remainingTime,
+  imageUrl,
+}) {
   return (
     <div className="sharing-ingredients-card">
-      <div className="ingredient-image">
-        <img src={onionImage} alt={ingredientName} />
+      {/* 왼쪽 이미지 영역 */}
+      <div className="image-section">
+        <div className="ingredient-image-container">
+          {imageUrl ? (
+            <img src={imageUrl} alt={ingredientName} className="ingredient-image" />
+          ) : (
+            <div className="ingredient-image-placeholder"></div>
+          )}
+        </div>
       </div>
-      <div className="ingredient-name">{ingredientName}</div>
-      <div className="freshness">신선도: {freshness}</div>
-      <div className="members-info">
-        <img src={usersIcon} alt="사용자 아이콘" className="users-icon" />
-        <span className="member-count">모집 인원 {currentMembers}/{totalMembers}</span>
+      
+      {/* 가운데 텍스트 영역 */}
+      <div className="text-section">
+        <div className="card-content">
+          {/* 등록날짜와 위치 */}
+          <div className="card-header">
+            <span className="registration-date">등록날짜: {registrationDate}</span>
+            <div className="location">
+              <img src="/src/assets/images/main/pin.png" alt="위치" className="location-icon" />
+              <span className="location-text">{location}</span>
+            </div>
+          </div>
+          
+          {/* 제목 */}
+          <div className="card-title">{title}</div>
+          
+          {/* 재료명 */}
+          <div className="ingredient-name">{ingredientName}</div>
+          
+          {/* 신선도와 모집인원 */}
+          <div className="card-info">
+            <span className="freshness">신선도: {freshness} / {maxFreshness}</span>
+            <span className="members">모집인원: {currentMembers}/{totalMembers}</span>
+          </div>
+        </div>
+        
+        {/* 남은 시간 표시 */}
+        <div className="remaining-time-badge">
+          <span className="remaining-time-text">
+            남은 시간 : {remainingTime.hours}시간 {remainingTime.minutes}분
+          </span>
+        </div>
       </div>
-      <button className="apply-button" onClick={onApply}>
-        신청
-      </button>
     </div>
   );
 };
-
-export default SharingIngredientsCard;
