@@ -11,6 +11,7 @@ import MainPage from '@pages/MainPage';
 import MapPage from '@pages/MapPage';
 import ChatPage from '@pages/ChatPage';
 import ProfilePage from '@pages/ProfilePage';
+import DetailPage from '@pages/DetailPage';
 import Login from '@pages/Login';
 
 export default function AppRouter() {
@@ -18,6 +19,7 @@ export default function AppRouter() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/detail/:id" element={<DetailPage />} />
         <Route element={<RootLayout />}>
           <Route index element={<MainPage />} />
           <Route path="/map" element={<MapPage />} />
