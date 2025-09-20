@@ -2,11 +2,42 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./footer.module.css";
 
+// Footer 아이콘들 import
+import homeIcon from "@images/footer/home.png";
+import homeActiveIcon from "@images/footer/home-active.png";
+import mapIcon from "@images/footer/map.png";
+import mapActiveIcon from "@images/footer/map-active.png";
+import chatIcon from "@images/footer/chat.png";
+import chatActiveIcon from "@images/footer/chat-active.png";
+import userIcon from "@images/footer/user.png";
+import userActiveIcon from "@images/footer/user-active.png";
+
 const items = [
-  { to: "/", label: "홈", exact: true, iconKey: "home" },
-  { to: "/map", label: "동네지도", iconKey: "map" },
-  { to: "/cart", label: "장바구니", iconKey: "shop" },
-  { to: "/profile", label: "마이페이지", iconKey: "user" },
+  { 
+    to: "/", 
+    label: "홈", 
+    exact: true, 
+    icon: homeIcon, 
+    activeIcon: homeActiveIcon 
+  },
+  { 
+    to: "/map", 
+    label: "동네지도", 
+    icon: mapIcon, 
+    activeIcon: mapActiveIcon 
+  },
+  { 
+    to: "/chat", 
+    label: "채팅", 
+    icon: chatIcon, 
+    activeIcon: chatActiveIcon 
+  },
+  { 
+    to: "/profile", 
+    label: "마이페이지", 
+    icon: userIcon, 
+    activeIcon: userActiveIcon 
+  },
 ];
 
 export default function Footer() {
@@ -24,7 +55,7 @@ export default function Footer() {
           {({ isActive }) => (
             <>
               <img
-                src={`/src/assets/images/footer/${it.iconKey}${isActive ? '-active' : ''}.png`}
+                src={isActive ? it.activeIcon : it.icon}
                 alt={it.label}
                 className={styles.icon}
               />
