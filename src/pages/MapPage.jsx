@@ -4,7 +4,7 @@ import VegetableList from '../components/map/VegetableList';
 import FloatingButton from '../components/ui/FloatingButton';
 import BottomSheet from '../components/ui/BottomSheet';
 import { SAMPLE_VEGETABLES } from '../data/mockVegetables';
-import styles from './MapPage.module.css';
+import styles from '@components/map/MapPage.module.css';
 
 export default function MapPage() {
   const [selectedVegetable, setSelectedVegetable] = useState(null);
