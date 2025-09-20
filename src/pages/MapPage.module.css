@@ -1,26 +1,20 @@
-/* 페이지 컨테이너 - 모바일 전용 */
+/* 페이지 컨테이너 */
 .pageContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100vh;
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
-/* 지도 섹션 - 모바일 전체 화면 */
+/* 지도 섹션 */
 .mapSection {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
