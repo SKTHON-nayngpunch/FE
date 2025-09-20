@@ -1,0 +1,25 @@
+/* 마감임박 섹션 */
+.deadline-section {
+    min-height: 100vh;
+}
+  
+ /* 마감임박 제목 */
+.deadline-title {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.25;
+    color: #111111;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.01em;
+}
+  
+/* 마감임박 카드 컨테이너 */
+.deadline-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 360px;
+    margin: 0 auto;
+}
+  

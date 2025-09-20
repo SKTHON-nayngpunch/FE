@@ -34,7 +34,7 @@ body {
   position: relative;
   width: 100%;
   /*min-width: 360px <- 아마 쓸 일 없을 듯*/
-  max-width: 430px;
+  max-width: 393px;
   min-height: 100vh;
   background: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,.05);
