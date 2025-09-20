@@ -8,6 +8,13 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
     strictPort: true,
+    proxy: {
+      '/api': {
+        target: 'https://api.silversieon.store',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
   resolve: {
     alias: [
@@ -23,14 +30,5 @@ export default defineConfig({
       { find: "@pages", replacement: "/src/pages" },
       { find: "@utils", replacement: "/src/utils" },
     ],
-  },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://api.silversieon.store',
-        changeOrigin: true,
-        secure: false,
-      },
-    },
   },
 })

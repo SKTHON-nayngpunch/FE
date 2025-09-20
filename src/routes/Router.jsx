@@ -6,11 +6,13 @@ import MainPage from '@pages/MainPage'
 import MapPage from '@pages/MapPage'
 import CartPage from '@pages/CartPage'
 import ProfilePage from '@pages/ProfilePage'
+import Login from '@pages/Login'
 
 export default function AppRouter() {
   return (
     <Router>
         <Routes>
+            <Route path="/login" element={<Login />} />
             <Route element={<RootLayout />}>
               <Route index element={<MainPage />} />
               <Route path="/map" element={<MapPage />} />
