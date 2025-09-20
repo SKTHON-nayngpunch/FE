@@ -2,6 +2,21 @@ import React from 'react';
 import { VEGETABLE_ICONS } from '../../data/vegetableIcons';
 import styles from './VegetableList.module.css';
 
+// 주소에서 동만 추출하는 함수
+const extractDong = (address) => {
+  if (!address) return '';
+  
+  // 정규식으로 "동"이 포함된 부분 추출
+  const dongMatch = address.match(/([가-힣]+동)/);
+  if (dongMatch) {
+    return dongMatch[1];
+  }
+  
+  // "동"이 없으면 마지막 부분 반환 (구 단위까지)
+  const parts = address.split(' ');
+  return parts[parts.length - 1] || address;
+};
+
 export default function VegetableList({
   vegetables = [],
   selectedVegetable,
@@ -56,7 +71,7 @@ export default function VegetableList({
                 </div>
               </div>
 
-              <div className={styles.cardAddress}>📍 {vegetable.address}</div>
+              <div className={styles.cardAddress}>📍 {extractDong(vegetable.address)}</div>
 
               <div className={styles.cardFooter}>
                 <span

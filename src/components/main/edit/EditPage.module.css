@@ -1,0 +1,334 @@
+.editPage {
+  padding: 0 16px;
+  max-width: 393px;
+  width: 100%;
+  height: 100%;
+  background-color: #F8F8F8;
+  position: relative;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 헤더 영역 */
+.header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+}
+
+/* 뒤로가기 버튼 */
+.backButton {
+  width: 8px;
+  height: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.backButton img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 카메라 영역 */
+.cameraSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 38px;
+  gap: 66px;
+}
+
+.cameraBox {
+  width: 130px;
+  height: 130px;
+  background-color: #EEEEEE;
+  border-radius: 22.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.cameraBox:hover {
+  background-color: #E0E0E0;
+}
+
+.cameraBox.analyzing {
+  background-color: #F5F5F5;
+}
+
+/* 이미지가 업로드되었을 때 배경 제거 */
+.cameraBox:has(.uploadedImage) {
+  background-color: transparent;
+}
+
+.cameraBox:has(.uploadedImage):hover {
+  background-color: transparent;
+}
+
+/* 카메라 아이콘 스타일 */
+.cameraBox img:not(.uploadedImage) {
+  width: 36.28px;
+  height: 39px;
+}
+
+/* 업로드된 이미지 스타일 */
+.uploadedImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 22.5px;
+}
+
+/* 로딩 오버레이 */
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22.5px;
+}
+
+/* 스피너 애니메이션 */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #E0E0E0;
+  border-top: 2px solid #1C9768;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.freshnessInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: -0.5px;
+  color: #141414;
+}
+
+/* 폼 영역 */
+.formSection {
+  padding: 0 16px;
+  margin-top: 15px;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #141414;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+
+.doubleSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.sectionItem {
+  flex: 1;
+}
+
+.sectionItem .label {
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  background-color: #FFFFFF;
+  border: 1px solid #A6A6A6;
+  border-radius: 5px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: -0.5px;
+  color: #141414;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #A6A6A6;
+  font-weight: 100;
+}
+
+/* 읽기 전용 입력 필드 */
+.input.readonly {
+  background-color: #F8F8F8;
+  border-color: #1C9768;
+  cursor: not-allowed;
+  color: #1C9768;
+  font-weight: 500;
+}
+
+.textarea {
+  width: 100%;
+  height: 220px;
+  background-color: #FFFFFF;
+  border: 1px solid #A6A6A6;
+  border-radius: 5px;
+  padding: 18px 12px;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: -0.5px;
+  color: #141414;
+  font-family: 'Pretendard', sans-serif;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder {
+  color: #141414;
+  font-weight: 100;
+}
+
+.aiContent {
+  width: 100%;
+  height: 120px;
+  background-color: #FFFFFF;
+  border: 1px solid #A6A6A6;
+  border-radius: 5px;
+  padding: 18px 12px;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: -0.5px;
+  color: #141414;
+  font-weight: 100;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* AI 분석 결과가 있을 때 스타일 */
+.aiContent:has(span:not(.placeholder)) {
+  background-color: #F8F8F8;
+  border-color: #1C9768;
+  color: #1C9768;
+  font-weight: 400;
+}
+
+/* 플레이스홀더 텍스트 */
+.placeholder {
+  color: #A6A6A6;
+  font-style: italic;
+}
+
+/* AI 라벨 */
+.aiLabel {
+  font-size: 12px;
+  color: #1C9768;
+  background-color: #E8F5F0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* 신선도 경고 메시지 */
+.warningMessage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: -1px;
+  color: #FF1010;
+  flex: 1;
+  justify-content: center;
+  margin-left: 16px;
+}
+
+.warningIcon {
+  width: 8px;
+  height: 15px;
+}
+
+/* 안내 문구 */
+.notice {
+  text-align: center;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: -1px;
+  color: #141414;
+  margin: 15px 0 31px 0;
+}
+
+/* 작성 완료 버튼 컨테이너 */
+.submitContainer {
+  position: relative;
+  padding: 0 16px;
+}
+
+/* 작성 완료 버튼 */
+.submitButton {
+  width: 100%;
+  height: 60px;
+  background-color: #1C9768;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.submitButton:hover {
+  background-color: #158557;
+}
+
+/* 비활성화된 버튼 */
+.submitButton.disabled {
+  background-color: #EEEEEE;
+  color: #5D5D5D;
+  cursor: not-allowed;
+}
+
+.submitButton.disabled:hover {
+  background-color: #EEEEEE;
+}
+
+/* 수정불가 라벨 */
+.disabledLabel {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: -1px;
+  color: #D71515;
+}

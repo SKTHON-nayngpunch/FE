@@ -2,6 +2,27 @@ import React from 'react';
 import './SharingIngredientsCard.css';
 import pinIcon from '@assets/images/main/pin.png';
 
+// 날짜 형식 변환 함수 (2025-09-20 -> 2025/09/20)
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  return dateString.replace(/-/g, '/');
+};
+
+// 주소에서 동만 추출하는 함수
+const extractDong = (address) => {
+  if (!address) return '';
+  
+  // 정규식으로 "동"이 포함된 부분 추출
+  const dongMatch = address.match(/([가-힣]+동)/);
+  if (dongMatch) {
+    return dongMatch[1];
+  }
+  
+  // "동"이 없으면 마지막 부분 반환 (구 단위까지)
+  const parts = address.split(' ');
+  return parts[parts.length - 1] || address;
+};
+
 export default function SharingIngredientsCard({
   registrationDate,
   title,
@@ -38,11 +59,11 @@ export default function SharingIngredientsCard({
           {/* 등록날짜와 위치 */}
           <div className="card-header">
             <span className="registration-date">
-              등록날짜: {registrationDate}
+              등록날짜: {formatDate(registrationDate)}
             </span>
             <div className="location">
               <img src={pinIcon} alt="위치" className="location-icon" />
-              <span className="location-text">{location}</span>
+              <span className="location-text">{extractDong(location)}</span>
             </div>
           </div>
 

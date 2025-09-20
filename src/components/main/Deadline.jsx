@@ -21,18 +21,39 @@ const Deadline = () => {
     return { hours, minutes };
   };
 
+  // 날짜 형식 변환 함수 (2025-09-20 -> 2025/09/20)
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    return dateString.replace(/-/g, '/');
+  };
+
+  // 주소에서 동만 추출하는 함수
+  const extractDong = (address) => {
+    if (!address) return '';
+    
+    // 정규식으로 "동"이 포함된 부분 추출
+    const dongMatch = address.match(/([가-힣]+동)/);
+    if (dongMatch) {
+      return dongMatch[1];
+    }
+    
+    // "동"이 없으면 마지막 부분 반환 (구 단위까지)
+    const parts = address.split(' ');
+    return parts[parts.length - 1] || address;
+  };
+
   // 서버 데이터를 컴포넌트 형식으로 변환하는 함수
   const transformServerData = (serverData) => {
     return serverData.map((item) => ({
       id: item.foodId,
-      registrationDate: item.createdDate,
+      registrationDate: formatDate(item.createdDate),
       title: item.title,
       ingredientName: item.name,
       freshness: item.conditionScore,
       maxFreshness: 10, // 서버에서 최대값을 제공하지 않으므로 기본값 10으로 설정
       currentMembers: item.currentMember,
       totalMembers: item.maxMember,
-      location: item.location,
+      location: extractDong(item.location),
       remainingTime: convertSecondsToTime(item.remainingSeconds),
       imageUrl: item.foodImageUrl || image1, // 서버 이미지가 없으면 기본 이미지 사용
     }));
