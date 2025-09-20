@@ -131,6 +131,17 @@
   transform: scale(0.98);
 }
 
+.test-login-btn:disabled {
+  background-color: #E8E8E8;
+  color: #CCCCCC;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.test-login-btn:disabled:hover {
+  background-color: #E8E8E8;
+}
+
 /* 모바일 세이프 에어리어 처리 */
 @supports (padding: max(0px)) {
   .bottom-section {
