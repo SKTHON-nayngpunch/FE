@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { APIService } from '@apis/axios';
 import styles from './EditPage.module.css';
+import backArrowIcon from '../../../assets/images/edit/back-arrow.svg';
+import cameraIcon from '../../../assets/images/edit/camera-icon.svg';
 
 const EditPage = () => {
   const navigate = useNavigate();
@@ -235,7 +237,7 @@ const EditPage = () => {
       {/* 헤더 영역 */}
       <div className={styles.header}>
         <button className={styles.backButton} onClick={handleBack}>
-          <img src="/src/assets/images/edit/back-arrow.svg" alt="뒤로가기" />
+          <img src={backArrowIcon} alt="뒤로가기" />
         </button>
         {/* 신선도 경고 메시지 */}
         {isLowFreshness && (
@@ -258,7 +260,7 @@ const EditPage = () => {
               className={styles.uploadedImage}
             />
           ) : (
-            <img src="/src/assets/images/edit/camera-icon.svg" alt="카메라" />
+            <img src={cameraIcon} alt="카메라" />
           )}
           {isAnalyzing && (
             <div className={styles.loadingOverlay}>

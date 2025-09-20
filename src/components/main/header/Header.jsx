@@ -26,7 +26,7 @@ const Header = () => {
           <img src={searchImg} alt="검색" />
         </button>
         <button className={styles.writeButton} onClick={handleWriteClick}>
-          <img src="/src/assets/images/header/pen.png" alt="글쓰기" />
+          <img src={penImg} alt="글쓰기" />
         </button>
       </div>
     </header>
