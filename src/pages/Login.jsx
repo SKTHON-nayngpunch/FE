@@ -2,20 +2,26 @@ import React from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '@utils/auth';
-import logoSvg from '@images/logo.svg';
-import kakaoIcon from '@images/kakao-icon.svg';
+import logoSvg from '../assets/images/logo.svg';
+import kakaoIcon from '../assets/images/kakao-icon.svg';
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleKakaoLogin = () => {
-  };
+  const handleKakaoLogin = () => {};
 
   const handleTestLogin = () => {
     // 테스트용 임시 토큰 설정 (실제 개발에서는 서버에서 받은 토큰을 사용)
     const testToken = 'test-jwt-token-for-development';
+    console.log('🔧 테스트 토큰 설정 중:', testToken);
     setToken(testToken);
-    navigate('/');
+
+    // 토큰 설정 확인
+    setTimeout(() => {
+      const savedToken = localStorage.getItem('ACCESS_TOKEN');
+      console.log('✅ 토큰 저장 확인:', savedToken);
+      navigate('/');
+    }, 100); // 약간의 지연으로 토큰 설정 완료 보장
   };
 
   return (

@@ -10,12 +10,12 @@ import RootLayout from '@components/layout/RootLayout';
 import MainPage from '@pages/MainPage';
 import MapPage from '@pages/MapPage';
 import ChatPage from '@pages/ChatPage';
-import ProfilePage from '@pages/ProfilePage';
-import Login from '@pages/Login';
-
 import ChatRoomPage from '@components/chat/ChatRoomPage';
+import ProfilePage from '@pages/ProfilePage';
 import DetailPage from '@components/main/DetailPage';
+import Login from '@pages/Login';
 import EditPage from '@components/main/edit/EditPage';
+
 
 export default function AppRouter() {
   return (
