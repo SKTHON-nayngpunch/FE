@@ -1,31 +1,96 @@
 import React from 'react';
-import onionImage from '@images/onion.png';
-import usersIcon from '@images/users-icon.svg';
 import './SharingIngredientsCard.css';
+import pinIcon from '@assets/images/main/pin.png';
 
-const SharingIngredientsCard = ({ 
-  ingredientName = "양파", 
-  freshness = "8/10", 
-  currentMembers = 3, 
-  totalMembers = 4,
-  onApply 
-}) => {
-  return (
-    <div className="sharing-ingredients-card">
-      <div className="ingredient-image">
-        <img src={onionImage} alt={ingredientName} />
-      </div>
-      <div className="ingredient-name">{ingredientName}</div>
-      <div className="freshness">신선도: {freshness}</div>
-      <div className="members-info">
-        <img src={usersIcon} alt="사용자 아이콘" className="users-icon" />
-        <span className="member-count">모집 인원 {currentMembers}/{totalMembers}</span>
-      </div>
-      <button className="apply-button" onClick={onApply}>
-        신청
-      </button>
-    </div>
-  );
+// 날짜 형식 변환 함수 (2025-09-20 -> 2025/09/20)
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  return dateString.replace(/-/g, '/');
 };
 
-export default SharingIngredientsCard;
+// 주소에서 동만 추출하는 함수
+const extractDong = (address) => {
+  if (!address) return '';
+  
+  // 정규식으로 "동"이 포함된 부분 추출
+  const dongMatch = address.match(/([가-힣]+동)/);
+  if (dongMatch) {
+    return dongMatch[1];
+  }
+  
+  // "동"이 없으면 마지막 부분 반환 (구 단위까지)
+  const parts = address.split(' ');
+  return parts[parts.length - 1] || address;
+};
+
+export default function SharingIngredientsCard({
+  registrationDate,
+  title,
+  ingredientName,
+  freshness,
+  maxFreshness,
+  currentMembers,
+  totalMembers,
+  location,
+  remainingTime,
+  imageUrl,
+  onClick,
+}) {
+  return (
+    <div className="sharing-ingredients-card" onClick={onClick}>
+      {/* 왼쪽 이미지 영역 */}
+      <div className="image-section">
+        <div className="ingredient-image-container">
+          {imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={ingredientName}
+              className="ingredient-image"
+            />
+          ) : (
+            <div className="ingredient-image-placeholder"></div>
+          )}
+        </div>
+      </div>
+
+      {/* 가운데 텍스트 영역 */}
+      <div className="text-section">
+        <div className="card-content">
+          {/* 등록날짜와 위치 */}
+          <div className="card-header">
+            <span className="registration-date">
+              등록날짜: {formatDate(registrationDate)}
+            </span>
+            <div className="location">
+              <img src={pinIcon} alt="위치" className="location-icon" />
+              <span className="location-text">{extractDong(location)}</span>
+            </div>
+          </div>
+
+          {/* 제목 */}
+          <div className="card-title">{title}</div>
+
+          {/* 재료명 */}
+          <div className="ingredient-name">{ingredientName}</div>
+
+          {/* 신선도와 모집인원 */}
+          <div className="card-info">
+            <span className="freshness">
+              신선도: {freshness} / {maxFreshness}
+            </span>
+            <span className="members">
+              모집인원: {currentMembers}/{totalMembers}
+            </span>
+          </div>
+        </div>
+
+        {/* 남은 시간 표시 */}
+        <div className="remaining-time-badge">
+          <span className="remaining-time-text">
+            남은 시간 : {remainingTime.hours}시간 {remainingTime.minutes}분
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}

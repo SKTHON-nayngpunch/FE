@@ -1,0 +1,6 @@
+.mainPage {
+    background: #F8F8F8;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 0 16px;
+}

@@ -1,0 +1,10 @@
+.freshness {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1b9768;
+  background-color: #ffffff;
+  border: 2px solid #1b9768;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: fit-content;
+}

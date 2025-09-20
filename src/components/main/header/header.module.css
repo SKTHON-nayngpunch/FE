@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.logo img {
+  width: 171.17px;
+  height: 43.488px;
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.searchButton,
+.writeButton {
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchButton:hover,
+.writeButton:hover {
+  background-color: rgba(239, 239, 239, 0.5);
+}
+
+.searchButton img,
+.writeButton img {
+  width: 22px;
+  height: 22px;
+}

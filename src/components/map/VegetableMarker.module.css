@@ -1,0 +1,203 @@
+/* 마커 컨테이너 */
+.markerContainer {
+  position: relative;
+  background: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.markerContainer:hover {
+  transform: scale(1.1);
+}
+
+.markerContainer.active {
+  border: 3px solid #51cf66;
+}
+
+.markerContainer.full {
+  border: 3px solid #ff6b6b;
+}
+
+.markerIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.markerCount {
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.markerCount.active {
+  color: #51cf66;
+}
+
+.markerCount.full {
+  color: #ff6b6b;
+}
+
+.alertBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* 인포윈도우 스타일 */
+.infoWindow {
+  padding: 16px;
+  min-width: 200px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.infoHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.infoIcon {
+  font-size: 32px;
+}
+
+.infoTitle {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.infoId {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.statusContainer {
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.statusContainer.active {
+  background: #e8f5e8;
+}
+
+.statusContainer.full {
+  background: #ffe0e0;
+}
+
+.statusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.statusLabel {
+  font-weight: bold;
+  color: #333;
+}
+
+.statusBadge {
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.statusBadge.active {
+  background: #51cf66;
+}
+
+.statusBadge.full {
+  background: #ff6b6b;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progressFill.active {
+  background: #51cf66;
+}
+
+.progressFill.full {
+  background: #ff6b6b;
+}
+
+.progressText {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.progressText.active {
+  color: #51cf66;
+}
+
+.progressText.full {
+  color: #ff6b6b;
+}
+
+.closedMessage {
+  background: #ff6b6b;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.joinButton {
+  width: 100%;
+  background: #51cf66;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.joinButton:hover {
+  background: #40c057;
+}
