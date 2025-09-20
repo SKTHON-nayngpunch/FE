@@ -23,4 +23,31 @@
     max-width: 360px;
     margin: 0 auto;
 }
+
+/* 로딩 메시지 */
+.loadingMessage {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    color: #666666;
+}
+
+/* 에러 메시지 */
+.errorMessage {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    color: #ff4444;
+}
+
+/* 빈 상태 메시지 */
+.emptyMessage {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    color: #999999;
+}
   

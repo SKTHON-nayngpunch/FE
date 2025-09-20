@@ -10,6 +10,7 @@ import RootLayout from '@components/layout/RootLayout';
 import MainPage from '@pages/MainPage';
 import MapPage from '@pages/MapPage';
 import ChatPage from '@pages/ChatPage';
+import ChatRoomPage from '@pages/ChatRoomPage';
 import ProfilePage from '@pages/ProfilePage';
 import DetailPage from '@pages/DetailPage';
 import Login from '@pages/Login';
@@ -20,6 +21,7 @@ export default function AppRouter() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/chat/:chatId" element={<ChatRoomPage />} />
         <Route element={<RootLayout />}>
           <Route index element={<MainPage />} />
           <Route path="/map" element={<MapPage />} />
