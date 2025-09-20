@@ -74,6 +74,7 @@
   align-items: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .messagePlaceholder:hover {
