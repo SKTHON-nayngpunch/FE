@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '@utils/auth';
+import { APIService } from '../apis/axios';
 import logoSvg from '../assets/images/logo.svg';
 import kakaoIcon from '../assets/images/kakao-icon.svg';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleKakaoLogin = () => {};
 
-  const handleTestLogin = () => {
-    // 테스트용 임시 토큰 설정 (실제 개발에서는 서버에서 받은 토큰을 사용)
-    const testToken = 'test-jwt-token-for-development';
-    console.log('🔧 테스트 토큰 설정 중:', testToken);
-    setToken(testToken);
-
-    // 토큰 설정 확인
-    setTimeout(() => {
-      const savedToken = localStorage.getItem('ACCESS_TOKEN');
-      console.log('✅ 토큰 저장 확인:', savedToken);
-      navigate('/');
-    }, 100); // 약간의 지연으로 토큰 설정 완료 보장
+  const handleTestLogin = async () => {
+    try {
+      setIsLoading(true);
+      console.log('🔧 테스트 로그인 API 요청 시작...');
+      
+      // 테스트 로그인 API 호출
+      const response = await APIService.public.post('/api/auths/test-login');
+      
+      console.log('✅ 테스트 로그인 성공:', response);
+      
+      // 서버에서 쿠키에 토큰을 설정해주므로 별도의 토큰 처리는 불필요
+      // 약간의 지연 후 메인 페이지로 이동
+      setTimeout(() => {
+        console.log('➡️ 메인 페이지로 이동');
+        navigate('/');
+      }, 500);
+      
+    } catch (error) {
+      console.error('❌ 테스트 로그인 실패:', error);
+      
+      // 에러 메시지 표시
+      const errorMessage = error.response?.data?.message || '테스트 로그인에 실패했습니다.';
+      alert(`로그인 실패: ${errorMessage}`);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -47,8 +63,12 @@ const Login = () => {
         </button>
 
         {/* 테스트 로그인 버튼 */}
-        <button className="test-login-btn" onClick={handleTestLogin}>
-          테스트 로그인
+        <button 
+          className="test-login-btn" 
+          onClick={handleTestLogin}
+          disabled={isLoading}
+        >
+          {isLoading ? '로그인 중...' : '테스트 로그인'}
         </button>
       </div>
     </div>
