@@ -29,7 +29,7 @@
 
 /* Main Image */
 .mainImageContainer {
-  width: 393px;
+  width: 100%;
   height: 393px;
   position: relative;
   overflow: hidden;

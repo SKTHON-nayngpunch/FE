@@ -161,10 +161,6 @@ const EditPage = () => {
       alert('모집 인원을 입력해주세요.');
       return;
     }
-    if (!formData.quantity.trim()) {
-      alert('개수를 입력해주세요.');
-      return;
-    }
     if (!uploadedImage) {
       alert('이미지를 업로드해주세요.');
       return;
