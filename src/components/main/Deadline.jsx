@@ -1,6 +1,6 @@
 import React from 'react';
 import SharingIngredientsCard from './SharingIngredientsCard';
-import './Deadline.module.css';
+import styles from './Deadline.module.css';
 
 import image1 from '@assets/images/main/image1.png';
 import image2 from '@assets/images/main/image2.png';
@@ -51,9 +51,9 @@ const Deadline = () => {
   ];
 
   return (
-    <div className="deadline-section">
-      <h2 className="deadline-title">마감임박</h2>
-      <div className="deadline-cards-container">
+    <div className={styles.deadlineSection}>
+      <h2 className={styles.deadlineTitle}>마감임박</h2>
+      <div className={styles.deadlineCardsContainer}>
         {urgentCards.map((card) => (
           <SharingIngredientsCard
             key={card.id}
