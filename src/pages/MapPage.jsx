@@ -8,8 +8,8 @@ import styles from '@components/map/MapPage.module.css';
 
 export default function MapPage() {
   const [selectedVegetable, setSelectedVegetable] = useState(null);
-  const [center, setCenter] = useState({ lat: 37.5665, lng: 126.978 });
-  const [level, setLevel] = useState(6);
+  const [center, setCenter] = useState({ lat: 37.615095, lng: 127.013111 }); // 서경대학교
+  const [level, setLevel] = useState(3); // 더 확대된 화면 (6 → 3)
   const [isListOpen, setIsListOpen] = useState(false);
 
   const handleMarkerClick = (vegetable) => {
