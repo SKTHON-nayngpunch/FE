@@ -1,0 +1,13 @@
+.timeBox {
+  background-color: #1b9768;
+  border-radius: 8px 8px 8px 0px;
+  padding: 8px 16px;
+  width: fit-content;
+}
+
+.timeText {
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+}

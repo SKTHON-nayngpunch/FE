@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const publicApi = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
-    timeout:30000
+  baseURL: import.meta.env.VITE_API_URL,
+  timeout: 30000,
 });

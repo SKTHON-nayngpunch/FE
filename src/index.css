@@ -15,17 +15,24 @@
 }
 
 /* 2) 리셋/노멀라이즈 */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* 3) 전역 글꼴(초기 페인트 포함) */
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 body {
   font-family: var(--font-family);
   background: #fff;
   color: #000;
   display: flex;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   min-height: 100vh;
 }
 
@@ -37,12 +44,29 @@ body {
   max-width: 393px;
   min-height: 100vh;
   background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 /* 5) 타이포 기본값 */
-h1, h2, h3, h4, h5, h6, p { margin: 0; font-weight: normal; font-size: inherit; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: normal;
+  font-size: inherit;
+}
 
 /* 6) 폼 컨트롤은 확실하게 상속 */
-button, input, textarea, select { font: inherit; }
-button { cursor: pointer; }
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
