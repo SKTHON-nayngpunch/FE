@@ -25,10 +25,28 @@ const getCookie = (name) => {
   return null;
 };
 
-// 토큰 저장 (localStorage 방식 - 호환성을 위해 유지)
+// 쿠키에 토큰 저장하는 함수
+const setCookie = (name, value, days = 7) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expiresString = expires.toUTCString();
+  
+  // 쿠키 설정 (HttpOnly는 클라이언트에서 설정 불가, Secure는 HTTPS에서만)
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expiresString}; path=/; SameSite=Lax`;
+  
+  console.log(`🍪 쿠키 저장: ${name} = ${value.substring(0, 20)}...`);
+};
+
+// 토큰 저장 (쿠키 우선, localStorage 대안)
 export const setToken = (token) => {
   if (token) {
+    // 1. 쿠키에 저장
+    setCookie(TOKEN_KEY, token);
+    
+    // 2. localStorage에도 저장 (호환성을 위해 유지)
     localStorage.setItem(TOKEN_KEY, token);
+    
+    console.log('✅ 토큰 저장 완료:', token.substring(0, 20) + '...');
   }
 };
 

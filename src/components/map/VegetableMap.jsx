@@ -7,8 +7,8 @@ import {
 import styles from './VegetableMap.module.css';
 
 export default function VegetableMap({
-  center = { lat: 37.5665, lng: 126.978 },
-  level = 5,
+  center = { lat: 37.615095, lng: 127.013111 }, // 서경대학교
+  level = 3, // 더 확대된 기본값
   vegetables = [], // 채소 나눔 데이터 배열
   onMarkerClick,
   className,

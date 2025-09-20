@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 import { loadKakaoSdk } from '../../lib/loadKakao';
 
 export default function KakaoMap({
-  center = { lat: 37.5665, lng: 126.978 }, // 서울시청 근처
-  level = 5, // 확대레벨(작을수록 더 확대)
+  center = { lat: 37.615095, lng: 127.013111 }, // 서경대학교
+  level = 3, // 확대레벨(작을수록 더 확대) - 더 확대된 기본값
   onReady, // kakao, map 인스턴스 넘겨줌
   className,
   style,

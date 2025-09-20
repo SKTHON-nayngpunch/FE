@@ -1,0 +1,56 @@
+.reservationOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding-bottom: 20px;
+  pointer-events: none;
+}
+
+.reservationContainer {
+  width: 100%;
+  padding: 0 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.reservationBox {
+  width: calc(100% - 28px);
+  max-width: 359px;
+  height: 60px;
+  background-color: #ffffff;
+  border: 1px solid #1c9768;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+}
+
+.reservationBox:hover {
+  background-color: #f0fdf7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(28, 151, 104, 0.2);
+}
+
+.reservationBox:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(28, 151, 104, 0.3);
+}
+
+.reservationText {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  color: #1c9768;
+  text-align: center;
+}

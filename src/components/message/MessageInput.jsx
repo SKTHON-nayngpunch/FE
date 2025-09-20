@@ -19,8 +19,8 @@ export default function MessageInput({
       setMessage('');
       setIsExpanded(false);
     } else {
-      // 메시지 입력창 확장
-      setIsExpanded(true);
+      // 메시지가 비어있어도 기본 메시지로 채팅방 이동
+      onSend(placeholder);
     }
   };
 
@@ -53,7 +53,7 @@ export default function MessageInput({
             onKeyPress={(e) => e.key === 'Enter' && handleSendClick()}
           />
         ) : (
-          <div
+          <div 
             className={styles.messagePlaceholder}
             onClick={() => setIsExpanded(true)}
           >

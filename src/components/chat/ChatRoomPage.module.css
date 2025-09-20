@@ -1,11 +1,13 @@
 /* 채팅방 페이지 전체 컨테이너 */
 .chatRoomPage {
+  position: relative;
   min-height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   max-width: 393px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* 상단 상태바 */
@@ -15,16 +17,21 @@
   align-items: center;
   padding: 14.67px 20.85px 12.56px 20.85px;
   height: 46.11px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .time {
-  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'SF Pro Text',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 400;
   font-size: 15.72px;
   line-height: 1.193;
   letter-spacing: -0.173px;
-  color: #060D1D;
+  color: #060d1d;
 }
 
 .statusIcons {
@@ -38,7 +45,7 @@
 .battery {
   width: 16px;
   height: 12px;
-  background: #060D1D;
+  background: #060d1d;
   border-radius: 2px;
 }
 
@@ -50,8 +57,8 @@
 .battery {
   width: 25px;
   height: 12px;
-  border: 1px solid #DADADA;
-  background: #060D1D;
+  border: 1px solid #dadada;
+  background: #060d1d;
   border-radius: 2px;
 }
 
@@ -60,7 +67,7 @@
   display: flex;
   align-items: center;
   padding: 21px 40px 21px 18px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   height: 82px;
 }
@@ -101,7 +108,12 @@
 }
 
 .userName {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.2;
@@ -124,15 +136,20 @@
 }
 
 .dateIndicator span {
-  background: #ECFFF8;
+  background: #ecfff8;
   border-radius: 12px;
   padding: 8px 28px;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.429;
   letter-spacing: -1px;
-  color: #1C9768;
+  color: #1c9768;
 }
 
 /* 메시지 목록 */
@@ -166,7 +183,12 @@
   max-width: 208px;
   padding: 8px 17px 8px 23px;
   border-radius: 15px;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
@@ -175,26 +197,31 @@
 }
 
 .received .messageBubble {
-  background: #EEEEEE;
-  color: #5D5D5D;
+  background: #eeeeee;
+  color: #5d5d5d;
   border-radius: 15px 15px 15px 0px;
 }
 
 .sent .messageBubble {
-  background: #1C9768;
-  color: #FFFFFF;
+  background: #1c9768;
+  color: #ffffff;
   border-radius: 15px 15px 0px 15px;
   padding: 19px 23px;
 }
 
 /* 메시지 시간 */
 .messageTime {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 500;
   font-size: 12.6px;
   line-height: 1.4;
   letter-spacing: 0.252px;
-  color: #BDBDBD;
+  color: #bdbdbd;
   align-self: flex-end;
 }
 
@@ -210,7 +237,7 @@
 
 /* 하단 입력 영역 */
 .inputArea {
-  background: #F9F9F9;
+  background: #f9f9f9;
   padding: 16.5px 67px 16.5px 18px;
   display: flex;
   align-items: center;
@@ -221,30 +248,63 @@
 .cameraButton {
   width: 33px;
   height: 33px;
-  background: #D9FFF0;
+  background: #d9fff0;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1001;
 }
 
 .cameraIcon {
   width: 19px;
   height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
-.cameraIcon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.cameraIcon.iconRotated {
+  transform: rotate(45deg);
+}
+
+.plusIcon {
+  position: relative;
+  width: 13px;
+  height: 13px;
+}
+
+.plusHorizontal,
+.plusVertical {
+  position: absolute;
+  background-color: #a6a6a6;
+  border-radius: 1px;
+}
+
+.plusHorizontal {
+  width: 13px;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.plusVertical {
+  width: 2px;
+  height: 13px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 
 .messageInput {
   flex: 1;
   position: relative;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 25px;
   height: 58px;
   display: flex;
@@ -258,7 +318,12 @@
   outline: none;
   background: transparent;
   padding: 19px 21px;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
@@ -267,7 +332,7 @@
 }
 
 .messageInput input::placeholder {
-  color: #A6A6A6;
+  color: #a6a6a6;
 }
 
 .sendButton {
@@ -291,28 +356,306 @@
   opacity: 0.8;
 }
 
+/* 나눔 예약 오버레이 */
+.reservationOverlay {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 393px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.slideUp {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+.slideDown {
+  animation: slideDown 0.3s ease-in forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(100%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(100%);
+  }
+}
+
+.reservationModal {
+  background: transparent;
+  padding: 0 14px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 91px; /* inputArea 높이만큼 위로 */
+}
+
+.reservationButton {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  border: 1px solid #1c9768;
+  border-radius: 8px;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.111;
+  letter-spacing: -0.5px;
+  color: #1c9768;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+.reservationButton:hover {
+  background: #f0fff8;
+}
+
+.reservationButton:active {
+  transform: translateY(1px);
+}
+
+.reservationButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 나눔 예약 완료 안내 */
+.reservationNotice {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.noticeBox {
+  background: #d9fff0;
+  border-radius: 18px;
+  padding: 14px 63px;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.28px;
+  color: #1c9768;
+  text-align: center;
+}
+
+/* 나눔 완료 오버레이 */
+.completionOverlay {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 393px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.completionModal {
+  background: transparent;
+  padding: 0 15px 20px 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 91px; /* inputArea 높이만큼 위로 */
+}
+
+.completionButton {
+  width: 100%;
+  height: 60px;
+  background: #1c9768;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.111;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+.completionButton:hover {
+  background: #158f5e;
+}
+
+.completionButton:active {
+  transform: translateY(1px);
+}
+
+.completionButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 나눔 완료 성공 모달 */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modalContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(217, 255, 240, 1) 100%), #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.closeButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.modalTitle {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: #1b9768;
+  margin: 0 0 15px 0;
+}
+
+.carbonInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.carbonAmount {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.carbonPrefix {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: #1b9768;
+}
+
+.carbonValue {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: #1b9768;
+}
+
+.leafIconContainer {
+  width: 44px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leafIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modalMessage {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 393px) {
   .chatRoomPage {
     max-width: 100%;
   }
-  
+
   .statusBar {
     padding-left: 4%;
     padding-right: 4%;
   }
-  
+
   .header {
     padding-left: 4%;
     padding-right: 4%;
   }
-  
+
   .chatArea {
     padding-left: 4%;
     padding-right: 4%;
   }
-  
+
   .inputArea {
+    border: 1px red solid;
     padding-left: 4%;
     padding-right: 4%;
   }
