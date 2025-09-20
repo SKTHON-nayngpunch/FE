@@ -12,13 +12,17 @@ const Header = () => {
     navigate('/edit');
   };
 
+  const handleSearchClick = () => {
+    navigate('/search');
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <img src={logoImg} alt="로고" />
       </div>
       <div className={styles.actions}>
-        <button className={styles.searchButton}>
+        <button className={styles.searchButton} onClick={handleSearchClick}>
           <img src={searchImg} alt="검색" />
         </button>
         <button className={styles.writeButton} onClick={handleWriteClick}>
