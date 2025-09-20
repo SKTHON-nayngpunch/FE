@@ -225,8 +225,8 @@ export default function MapPage() {
       {/* 지도 */}
       <div className={styles.mapSection}>
         <VegetableMap
-        center={center}
-        level={level}
+          center={center}
+          level={level}
           vegetables={SAMPLE_VEGETABLES}
           onMarkerClick={handleMarkerClick}
         />
