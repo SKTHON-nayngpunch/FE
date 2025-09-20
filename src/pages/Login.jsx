@@ -2,8 +2,8 @@ import React from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { setToken } from '@utils/auth';
-import logoSvg from '../assets/images/logo.svg';
-import kakaoIcon from '../assets/images/kakao-icon.svg';
+import logoSvg from '@images/logo.svg';
+import kakaoIcon from '@images/kakao-icon.svg';
 
 const Login = () => {
   const navigate = useNavigate();

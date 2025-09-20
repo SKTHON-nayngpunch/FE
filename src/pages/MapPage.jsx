@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import VegetableMap from '../components/map/VegetableMap';
-import styles from './MapPage.module.css';
+import styles from '@components/map/MapPage.module.css';
 
 // 채소별 이모지 아이콘 매핑
 const VEGETABLE_ICONS = {

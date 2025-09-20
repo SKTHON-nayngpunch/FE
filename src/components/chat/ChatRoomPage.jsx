@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import styles from './ChatRoomPage.module.css';
+import styles from '@components/chat/ChatRoomPage.module.css';
 import profileImage from '@images/chat/profile-chat.png';
 import backArrow from '@images/chat/back-arrow.svg';
 import cameraIcon from '@images/chat/camera-icon.svg';

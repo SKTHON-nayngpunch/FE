@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './ChatPage.module.css';
+import styles from '@components/chat/ChatPage.module.css';
 import profileChat from '@images/chat/profile-chat.png';
 import profile2 from '@images/chat/profile-2.png';
 import profile3 from '@images/chat/profile-3.png';

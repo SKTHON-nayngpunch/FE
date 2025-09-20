@@ -1,18 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './DetailPage.module.css';
+import styles from '@components/main/DetailPage.module.css';
 
 // Import components
-import FreshnessIndicator from '../components/detail/FreshnessIndicator';
-import FreshnessInfo from '../components/detail/FreshnessInfo';
-import TimeBox from '../components/detail/TimeBox';
-import UserInfo from '../components/userInfo/UserInfo';
-import MessageInput from '../components/message/MessageInput';
+import FreshnessIndicator from '@components/detail/FreshnessIndicator';
+import FreshnessInfo from '@components/detail/FreshnessInfo';
+import TimeBox from '@components/detail/TimeBox';
+import UserInfo from '@components/userInfo/UserInfo';
+import MessageInput from '@components/message/MessageInput';
 
 // Import images
-import mainImage from '../assets/images/detail/main-image.png';
-import profileImage from '../assets/images/detail/profile-image.png';
-import backArrow from '../assets/images/detail/back-arrow.svg';
+import mainImage from '@images/detail/main-image.png';
+import profileImage from '@images/detail/profile-image.png';
+import backArrow from '@images/detail/back-arrow.svg';
 
 export default function DetailPage() {
   const navigate = useNavigate();
