@@ -37,6 +37,7 @@ export default function ChatRoomPage() {
   const navigate = useNavigate();
   const { chatId } = useParams();
   const [message, setMessage] = useState('');
+  const [showReservation, setShowReservation] = useState(false);
 
   const handleBack = () => {
     navigate('/chat');
@@ -47,6 +48,14 @@ export default function ChatRoomPage() {
       // 메시지 전송 로직
       setMessage('');
     }
+  };
+
+  const handleCameraClick = () => {
+    setShowReservation(true);
+  };
+
+  const handleCloseReservation = () => {
+    setShowReservation(false);
   };
 
   const handleKeyPress = (e) => {
@@ -102,7 +111,7 @@ export default function ChatRoomPage() {
 
       {/* 하단 입력 영역 */}
       <div className={styles.inputArea}>
-        <div className={styles.cameraButton}>
+        <div className={styles.cameraButton} onClick={handleCameraClick}>
           <div className={styles.cameraIcon}>
             <img src={cameraIcon} alt="카메라" />
           </div>

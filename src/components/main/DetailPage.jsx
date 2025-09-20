@@ -14,6 +14,7 @@ import MessageInput from '@components/message/MessageInput';
 import mainImage from '@assets/images/detail/main-image.png';
 import profileImage from '@assets/images/detail/profile-image.png';
 import backArrow from '@assets/images/detail/back-arrow.svg';
+import logo from '@assets/images/logo.svg';
 
 export default function DetailPage() {
   const navigate = useNavigate();
@@ -94,7 +95,13 @@ export default function DetailPage() {
             gap: '16px',
           }}
         >
-          <div style={{ fontSize: '48px' }}>🥕</div>
+          <div style={{ width: '48px', height: '48px' }}>
+            <img
+              src={logo}
+              alt="로고"
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
           <h2>로딩 중...</h2>
           <p style={{ color: '#666' }}>음식 정보를 불러오고 있습니다.</p>
         </div>

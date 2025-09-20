@@ -2,11 +2,13 @@
 
 .container {
   width: 393px;
-  height: 852px;
+  min-height: 100vh;
   background-color: #f8f8f8;
   position: relative;
   margin: 0 auto;
   font-family: 'Pretendard', sans-serif;
+  overflow-y: auto;
+  padding-bottom: 80px; /* MessageInput을 위한 여백 */
 }
 
 /* Back Button */
