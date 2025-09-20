@@ -73,19 +73,15 @@
   height: 34px;
   display: flex;
   align-items: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  justify-content: center;
   white-space: nowrap;
-}
-
-.messagePlaceholder:hover {
-  background-color: #e0e0e0;
 }
 
 .messagePlaceholder span {
   font-weight: 400;
   font-size: 12px;
   color: #5d5d5d;
+  text-align: center;
 }
 
 .messageInput {
