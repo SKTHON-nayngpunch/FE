@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
+import { setToken } from '@utils/auth';
 import logoSvg from '../assets/images/logo.svg';
 import kakaoIcon from '../assets/images/kakao-icon.svg';
 
@@ -11,6 +12,9 @@ const Login = () => {
   };
 
   const handleTestLogin = () => {
+    // 테스트용 임시 토큰 설정 (실제 개발에서는 서버에서 받은 토큰을 사용)
+    const testToken = 'test-jwt-token-for-development';
+    setToken(testToken);
     navigate('/');
   };
 
