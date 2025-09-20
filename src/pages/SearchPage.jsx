@@ -16,6 +16,13 @@ export default function SearchPage() {
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
 
+    // remainingSeconds를 시간과 분으로 변환하는 함수
+  const convertSecondsToTime = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    return { hours, minutes };
+  };
+
   // 검색 실행
   const handleSearch = async () => {
     if (!keyword.trim()) {
@@ -206,7 +213,7 @@ export default function SearchPage() {
                         currentMembers={food.currentMember}
                         totalMembers={food.maxMember}
                         location={food.location}
-                        remainingTime={food.remainingSeconds}
+                        remainingTime={convertSecondsToTime(food.remainingSeconds)}
                         imageUrl={food.foodImageUrl}
                       />
                     </div>
