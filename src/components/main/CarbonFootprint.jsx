@@ -38,8 +38,8 @@ const CarbonFootprint = ({ myShareCount = 5, receivedShareCount = 5 }) => {
             <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
               <defs>
                 <linearGradient id="carbonGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="rgba(27, 151, 104, 0.8)" />
-                  <stop offset="100%" stopColor="rgba(27, 151, 104, 0.1)" />
+                <stop offset="0%" stopColor="rgba(27, 151, 104, 0.6)" />
+                <stop offset="100%" stopColor="rgba(181, 255, 139, 0.2)" />
                 </linearGradient>
               </defs>
               <XAxis hide />

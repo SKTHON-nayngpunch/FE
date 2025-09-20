@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@components/main/header/Header';
-import styles from '@components/main/header.module.css';
+import styles from '@components/main/MainPage.module.css';
 import Deadline from '@components/main/Deadline';
 import CarbonFootprint from '@components/main/CarbonFootprint';
 
