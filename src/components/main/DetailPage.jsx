@@ -260,7 +260,7 @@ export default function DetailPage() {
       {/* Message Input */}
       <MessageInput
         participantsCount={`${foodData.currentMember}/${foodData.maxMember}`}
-        placeholder="안녕하세요, 궁금해서 문의드려q요."
+        placeholder="안녕하세요, 궁금해서 문의드려요."
         onSend={handleSendMessage}
       />
     </div>
