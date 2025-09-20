@@ -24,6 +24,7 @@ export default function AppRouter() {
         <Route path="/login" element={<Login />} />
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/chat/:chatId" element={<ChatRoomPage />} />
+        <Route path="/chat/room/:chatId" element={<ChatRoomPage />} />
         <Route path="/edit" element={<EditPage />} />
         <Route element={<RootLayout />}>
           <Route index element={<MainPage />} />

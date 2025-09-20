@@ -18,8 +18,10 @@ export default function MessageInput({
       onSend(message);
       setMessage('');
       setIsExpanded(false);
+    } else {
+      // 메시지가 비어있어도 기본 메시지로 채팅방 이동
+      onSend(placeholder);
     }
-    // 더 이상 빈 상태에서 보내기 버튼 클릭 시 input 확장하지 않음
   };
 
   const handleInputChange = (e) => {
@@ -51,7 +53,10 @@ export default function MessageInput({
             onKeyPress={(e) => e.key === 'Enter' && handleSendClick()}
           />
         ) : (
-          <div className={styles.messagePlaceholder}>
+          <div 
+            className={styles.messagePlaceholder}
+            onClick={() => setIsExpanded(true)}
+          >
             <span>{placeholder}</span>
           </div>
         )}

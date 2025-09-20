@@ -75,7 +75,17 @@ export default function DetailPage() {
 
   const handleSendMessage = (message) => {
     console.log('메시지 전송:', message);
-    // 여기에 메시지 전송 로직 추가
+    // 채팅방으로 이동 (foodId 포함)
+    navigate(`/chat/room/${id}`, { 
+      state: { 
+        foodId: id,
+        message: message,
+        sellerInfo: {
+          nickname: foodData.writerNickname,
+          profileImage: foodData.writerProfileImageUrl
+        }
+      } 
+    });
   };
 
   // 로딩 상태
@@ -250,7 +260,7 @@ export default function DetailPage() {
       {/* Message Input */}
       <MessageInput
         participantsCount={`${foodData.currentMember}/${foodData.maxMember}`}
-        placeholder="안녕하세요, 궁금해서 문의드려요."
+        placeholder="안녕하세요, 궁금해서 문의드려q요."
         onSend={handleSendMessage}
       />
     </div>
