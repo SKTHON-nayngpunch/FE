@@ -1,11 +1,13 @@
 /* 채팅방 페이지 전체 컨테이너 */
 .chatRoomPage {
+  position: relative;
   min-height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   max-width: 393px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* 상단 상태바 */
@@ -15,16 +17,21 @@
   align-items: center;
   padding: 14.67px 20.85px 12.56px 20.85px;
   height: 46.11px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .time {
-  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'SF Pro Text',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 400;
   font-size: 15.72px;
   line-height: 1.193;
   letter-spacing: -0.173px;
-  color: #060D1D;
+  color: #060d1d;
 }
 
 .statusIcons {
@@ -38,7 +45,7 @@
 .battery {
   width: 16px;
   height: 12px;
-  background: #060D1D;
+  background: #060d1d;
   border-radius: 2px;
 }
 
@@ -50,8 +57,8 @@
 .battery {
   width: 25px;
   height: 12px;
-  border: 1px solid #DADADA;
-  background: #060D1D;
+  border: 1px solid #dadada;
+  background: #060d1d;
   border-radius: 2px;
 }
 
@@ -60,7 +67,7 @@
   display: flex;
   align-items: center;
   padding: 21px 40px 21px 18px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   height: 82px;
 }
@@ -101,7 +108,12 @@
 }
 
 .userName {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.2;
@@ -124,15 +136,20 @@
 }
 
 .dateIndicator span {
-  background: #ECFFF8;
+  background: #ecfff8;
   border-radius: 12px;
   padding: 8px 28px;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.429;
   letter-spacing: -1px;
-  color: #1C9768;
+  color: #1c9768;
 }
 
 /* 메시지 목록 */
@@ -166,7 +183,12 @@
   max-width: 208px;
   padding: 8px 17px 8px 23px;
   border-radius: 15px;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
@@ -175,26 +197,31 @@
 }
 
 .received .messageBubble {
-  background: #EEEEEE;
-  color: #5D5D5D;
+  background: #eeeeee;
+  color: #5d5d5d;
   border-radius: 15px 15px 15px 0px;
 }
 
 .sent .messageBubble {
-  background: #1C9768;
-  color: #FFFFFF;
+  background: #1c9768;
+  color: #ffffff;
   border-radius: 15px 15px 0px 15px;
   padding: 19px 23px;
 }
 
 /* 메시지 시간 */
 .messageTime {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 500;
   font-size: 12.6px;
   line-height: 1.4;
   letter-spacing: 0.252px;
-  color: #BDBDBD;
+  color: #bdbdbd;
   align-self: flex-end;
 }
 
@@ -210,7 +237,7 @@
 
 /* 하단 입력 영역 */
 .inputArea {
-  background: #F9F9F9;
+  background: #f9f9f9;
   padding: 16.5px 67px 16.5px 18px;
   display: flex;
   align-items: center;
@@ -221,7 +248,7 @@
 .cameraButton {
   width: 33px;
   height: 33px;
-  background: #D9FFF0;
+  background: #d9fff0;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -244,7 +271,7 @@
 .messageInput {
   flex: 1;
   position: relative;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 25px;
   height: 58px;
   display: flex;
@@ -258,7 +285,12 @@
   outline: none;
   background: transparent;
   padding: 19px 21px;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
@@ -267,7 +299,7 @@
 }
 
 .messageInput input::placeholder {
-  color: #A6A6A6;
+  color: #a6a6a6;
 }
 
 .sendButton {
@@ -296,23 +328,24 @@
   .chatRoomPage {
     max-width: 100%;
   }
-  
+
   .statusBar {
     padding-left: 4%;
     padding-right: 4%;
   }
-  
+
   .header {
     padding-left: 4%;
     padding-right: 4%;
   }
-  
+
   .chatArea {
     padding-left: 4%;
     padding-right: 4%;
   }
-  
+
   .inputArea {
+    border: 1px red solid;
     padding-left: 4%;
     padding-right: 4%;
   }
