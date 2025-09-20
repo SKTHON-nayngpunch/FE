@@ -1,0 +1,259 @@
+.container {
+  width: 100%;
+  max-width: 393px;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  margin: 0 auto;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  padding: 4px;
+  margin-right: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* 검색 섹션 */
+.searchSection {
+  padding: 20px 16px;
+  background-color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.searchInputContainer {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #1b9768;
+}
+
+.searchButton {
+  padding: 12px 20px;
+  background-color: #1b9768;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 70px;
+}
+
+.searchButton:hover {
+  background-color: #158f5e;
+}
+
+.searchButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 정렬 섹션 */
+.sortSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sortLabel {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.sortToggle {
+  padding: 8px 16px;
+  border: 2px solid #1b9768;
+  background-color: transparent;
+  color: #1b9768;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sortToggle.deadline {
+  background-color: #1b9768;
+  color: white;
+}
+
+.sortToggle.freshness {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
+  color: white;
+}
+
+/* 결과 섹션 */
+.resultsSection {
+  flex: 1;
+  padding: 0 16px 20px;
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 16px 0 8px;
+}
+
+.resultsCount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 결과 그리드 */
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.resultsGrid > div {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.resultsGrid > div:hover {
+  transform: translateY(-2px);
+}
+
+/* 로딩 상태 */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.logoContainer {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  animation: pulse 2s infinite;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 에러 상태 */
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.retryButton {
+  padding: 8px 16px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* 검색 결과 없음 */
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #666;
+}
+
+.noResults p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* 초기 상태 */
+.initialState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+  color: #999;
+}
+
+.initialState p {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+/* 반응형 */
+@media (max-width: 393px) {
+  .container {
+    width: 100vw;
+  }
+
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+}
