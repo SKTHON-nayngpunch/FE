@@ -4,7 +4,7 @@ import RootLayout from '@components/layout/RootLayout'
 
 import MainPage from '@pages/MainPage'
 import MapPage from '@pages/MapPage'
-import CartPage from '@pages/CartPage'
+import ChatPage from '@pages/ChatPage'
 import ProfilePage from '@pages/ProfilePage'
 import Login from '@pages/Login'
 
@@ -16,7 +16,7 @@ export default function AppRouter() {
             <Route element={<RootLayout />}>
               <Route index element={<MainPage />} />
               <Route path="/map" element={<MapPage />} />
-              <Route path="/cart" element={<CartPage />} />
+              <Route path="/chat" element={<ChatPage />} />
               <Route path="/profile" element={<ProfilePage />} />
             </Route>
         </Routes>
