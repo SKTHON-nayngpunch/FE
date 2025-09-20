@@ -23,5 +23,14 @@ export default defineConfig({
       { find: "@pages", replacement: "/src/pages" },
       { find: "@utils", replacement: "/src/utils" },
     ],
-  }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://api.silversieon.store',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })
