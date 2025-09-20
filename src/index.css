@@ -21,30 +21,37 @@
   box-sizing: border-box;
 }
 
-/* 3) 전역 글꼴(초기 페인트 포함) */
+/* 3) 전역 글꼴 - 모바일 전용 전체 화면 */
 html,
 body {
   height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 body {
   font-family: var(--font-family);
   background: #fff;
   color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* 4) #root 컨테이너 (모바일 고정폭 레이아웃) */
+/* 4) #root 컨테이너 - 모바일 전용 전체 화면 */
 #root {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  /*min-width: 360px <- 아마 쓸 일 없을 듯*/
-  max-width: 393px;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 /* 5) 타이포 기본값 */

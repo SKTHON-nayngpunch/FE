@@ -1,0 +1,128 @@
+/* 오버레이 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 바텀 시트 */
+.bottomSheet {
+  width: 100%;
+  max-width: 100vw;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  max-height: 90vh;
+  min-height: 200px;
+}
+
+.bottomSheet.open {
+  transform: translateY(0);
+}
+
+/* 드래그 핸들 */
+.dragHandle {
+  padding: 12px 0 8px 0;
+  display: flex;
+  justify-content: center;
+  cursor: grab;
+}
+
+.handleBar {
+  width: 40px;
+  height: 4px;
+  background: #d0d0d0;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.dragHandle:hover .handleBar {
+  background: #a0a0a0;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.closeButton:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* 컨텐츠 */
+.content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 모바일 전용 - 데스크톱 스타일 제거 */
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+  .bottomSheet {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .header {
+    padding: 8px 16px 16px 16px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}
+
+/* 스크롤 방지 */
+.overlay {
+  overscroll-behavior: contain;
+}
+
+.bottomSheet {
+  overscroll-behavior: contain;
+}

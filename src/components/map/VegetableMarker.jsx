@@ -1,22 +1,6 @@
 import React from 'react';
+import { VEGETABLE_ICONS } from '../../data/vegetableIcons';
 import styles from './VegetableMarker.module.css';
-
-// 채소별 이모지 아이콘 매핑
-const VEGETABLE_ICONS = {
-  양파: '🧅',
-  당근: '🥕',
-  대파: '🌿',
-  배추: '🥬',
-  무: '🥖', // 무는 적당한 이모지가 없어서 대체
-  감자: '🥔',
-  토마토: '🍅',
-  오이: '🥒',
-  상추: '🥗',
-  브로콜리: '🥦',
-  호박: '🎃',
-  고구마: '🍠',
-};
-
 // 커스텀 마커 HTML을 생성하는 함수
 export const createVegetableMarkerContent = (item, current, limit) => {
   const icon = VEGETABLE_ICONS[item] || '🥬'; // 기본값
