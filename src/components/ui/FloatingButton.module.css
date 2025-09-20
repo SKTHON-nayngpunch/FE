@@ -1,7 +1,7 @@
 .floatingButton {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 90px; /* 푸터 높이(62px) + 여백 고려 */
+  right: calc(50% - 196.5px + 20px); /* 화면 중앙에서 393px의 절반만큼 뺀 후 20px 여백 */
   width: 64px;
   height: 64px;
   background: #51cf66;
@@ -15,8 +15,7 @@
   font-size: 24px;
   color: white;
   transition: all 0.3s ease;
-  z-index: 1000;
-  margin-bottom: 50px;
+  z-index: 9999;
 }
 
 .floatingButton:hover {
@@ -29,4 +28,10 @@
   transform: scale(0.95);
 }
 
-/* 모바일 전용 - 반응형 제거 */
+/* 모바일 최적화 */
+@media (max-width: 393px) {
+  .floatingButton {
+    right: 20px; /* 작은 화면에서는 단순히 우측 20px */
+    bottom: 90px;
+  }
+}

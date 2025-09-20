@@ -1,8 +1,9 @@
 import React from 'react';
 import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import './CarbonFootprint.css';
+import leafIcon from '../../assets/images/sharing-count/leaf-icon.svg';
 
-const CarbonFootprint = ({ myShareCount = 5, receivedShareCount = 5 }) => {
+const CarbonFootprint = ({ myShareCount = 5, receivedShareCount = 5, chanceCount = 3, carbonCount = 750 }) => {
   // 탄소발자국 데이터 (피그마 곡선을 따라가는 데이터)
   const data = [
     { name: '1', value: 20 },
@@ -20,56 +21,69 @@ const CarbonFootprint = ({ myShareCount = 5, receivedShareCount = 5 }) => {
   ];
 
   return (
-    <div className="carbon-footprint-container">
-      <div className="carbon-content">
-        {/* 구분선 */}
-        <div className="divider"></div>
-
-        {/* 탄소발자국 제목 */}
-        <div className="carbon-title">
-          지금까지 <br />
-          내가 줄인 <span className="highlight-text">탄소발자국</span>
-        </div>
-
-
-        {/* 차트 영역 */}
-        <div className="chart-container">
-          <ResponsiveContainer width="100%" height={90}>
-            <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-              <defs>
-                <linearGradient id="carbonGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="rgba(27, 151, 104, 0.6)" />
-                    <stop offset="100%" stopColor="rgba(181, 255, 139, 0.2)" />
-                </linearGradient>
-              </defs>
-              <XAxis hide />
-              <YAxis hide />
-              <Area
-                type="monotone"
-                dataKey="value"
-                stroke="#1B9768"
-                strokeWidth={2}
-                fill="url(#carbonGradient)"
-                dot={false}
-                connectNulls={true}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* 하단 정보 영역: 나눔 통계와 탄소발자국 값을 같은 레이어에 배치 */}
-        <div className="bottom-info">
-          <div className="sharing-stats">
-            <div className="stat-item">
-              <span className="stat-label">나의 나눔 횟수:</span>
-              <span className="stat-value">{myShareCount}</span>
+    <div className="combined-container">
+      {/* SharingCount 섹션 */}
+      <div className="sharing-count-section">
+        {/* 상단 녹색 탭 - 나눔 횟수 */}
+        <div className="sharing-top-tab">
+            <div className="leaf-icon">
+                <img src={leafIcon} alt="leaf" />
             </div>
-            <div className="stat-item">
-              <span className="stat-label">나눔 받은 횟수:</span>
-              <span className="stat-value">{receivedShareCount}</span>
-            </div>
+            <div className="progress-text">{chanceCount}</div>
+        </div>
+      </div>
+
+      {/* 탄소발자국 그래프 섹션 */}
+      <div className="carbon-footprint-container">
+        <div className="carbon-content">
+          {/* 구분선 */}
+          <div className="divider"></div>
+
+          {/* 탄소발자국 제목 */}
+          <div className="carbon-title">
+            지금까지 <br />
+            내가 줄인 <span className="highlight-text">탄소발자국</span>
           </div>
-          <div className="carbon-value">750g</div>
+
+          {/* 차트 영역 */}
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height={90}>
+              <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="carbonGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="rgba(27, 151, 104, 0.6)" />
+                      <stop offset="100%" stopColor="rgba(181, 255, 139, 0.2)" />
+                  </linearGradient>
+                </defs>
+                <XAxis hide />
+                <YAxis hide />
+                <Area
+                  type="monotone"
+                  dataKey="value"
+                  stroke="#1B9768"
+                  strokeWidth={2}
+                  fill="url(#carbonGradient)"
+                  dot={false}
+                  connectNulls={true}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* 하단 정보 영역: 나눔 통계와 탄소발자국 값을 같은 레이어에 배치 */}
+          <div className="bottom-info">
+            <div className="sharing-stats">
+              <div className="stat-item">
+                <span className="stat-label">나의 나눔 횟수:</span>
+                <span className="stat-value">{myShareCount}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">나눔 받은 횟수:</span>
+                <span className="stat-value">{receivedShareCount}</span>
+              </div>
+            </div>
+            <div className="carbon-value">{carbonCount}g</div>
+          </div>
         </div>
       </div>
     </div>
