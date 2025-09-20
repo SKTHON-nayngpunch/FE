@@ -1,18 +1,21 @@
 import React from 'react';
 import styles from './header.module.css';
+import logoImg from '../../../assets/images/header/Logo.png';
+import searchImg from '../../../assets/images/header/search.png';
+import penImg from '../../../assets/images/header/pen.png';
 
 const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src="/src/assets/images/header/Logo.png" alt="로고" />
+        <img src={logoImg} alt="로고" />
       </div>
       <div className={styles.actions}>
         <button className={styles.searchButton}>
-          <img src="/src/assets/images/header/search.png" alt="검색" />
+          <img src={searchImg} alt="검색" />
         </button>
         <button className={styles.writeButton}>
-          <img src="/src/assets/images/header/pen.png" alt="글쓰기" />
+          <img src={penImg} alt="글쓰기" />
         </button>
       </div>
     </header>
